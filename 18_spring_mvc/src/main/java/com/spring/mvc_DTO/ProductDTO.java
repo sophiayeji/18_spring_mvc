@@ -74,7 +74,12 @@ public class ProductDTO {
 	public void setProductList(List<ProductDTO> productList) {
 		this.productList = productList;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "ProductDTO [productCd=" + productCd + ", productNm=" + productNm + ", price=" + price
+				+ ", deliveryPrice=" + deliveryPrice + ", enrollDt=" + enrollDt + ", brandCd=" + brandCd
+				+ ", productList=" + productList + "]";
+	}
 
 }
