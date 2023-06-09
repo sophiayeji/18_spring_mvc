@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -76,4 +77,18 @@ public class V2C_Ex02 {
 	 *	- 1) 방법은 @RequestParam을 통해서 데이터에 접근하고 , 2) 방법은 @PathVariable을 통해서 데이터에 접근한다.
 	 *  - 2) 방법은 {}로 패턴을 매칭하여 데이터에 접근 한다. 
 	 * */
+	
+	@GetMapping("/pathVariable/{productCd}/{orderQty}")
+	public String pathVariable(@PathVariable String productCd,
+							   @PathVariable int orderQty) {
+		
+		System.out.println("\n @pathVariable \n");
+		System.out.println(productCd);
+		System.out.println(orderQty);
+		System.out.println();
+				
+		return "chapter01_form/input";
+	}
+	
+	
 }

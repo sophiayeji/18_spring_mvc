@@ -74,7 +74,7 @@
 	<br><hr><br>
 	
     <h1>5) @PathVariable</h1>
-	<p><a href="">구매하기(@PathVariable)</a></p>
+	<p><a href="pathVariable/product3/1">구매하기(@PathVariable)</a></p>
 
 	<br><hr><br>
 	

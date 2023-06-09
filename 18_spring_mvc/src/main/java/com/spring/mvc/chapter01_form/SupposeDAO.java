@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import com.spring.mvc_DTO.ProductDTO;
+import com.spring.mvc.dto.ProductDTO;
 
 @Repository
 public class SupposeDAO {

@@ -1,4 +1,4 @@
-package com.spring.mvc_DTO;
+package com.spring.mvc.dto;
 
 import java.util.Date;
 import java.util.List;
