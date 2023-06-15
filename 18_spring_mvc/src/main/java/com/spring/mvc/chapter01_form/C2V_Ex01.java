@@ -1,3 +1,4 @@
+
 package com.spring.mvc.chapter01_form;
 
 
@@ -7,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/c2v") // 중복되는 경로는 controller위에 url을 지정해서 코드의 중복을 줄일 수 있다.
 public class C2V_Ex01 {
 
 	@Autowired

@@ -11,6 +11,11 @@ public class SupposeController {
 	@Autowired
 	private M2D m2d;
 	
+	@Autowired
+	private D2M d2m;
+	
+	
+	
 	/*  Mapper to DAO */
 	
 	@GetMapping("/ex01")
@@ -79,4 +84,59 @@ public class SupposeController {
 		return "home";
 	}
 	
+/*  DAO to Mapper */
+	
+	@GetMapping("/sample01")
+	public String sample01() {
+		d2m.sample01();
+		return "home";
+	}
+	
+	@GetMapping("/sample02")
+	public String sample02() {
+		d2m.sample02();
+		return "home";
+	}
+	
+	@GetMapping("/sample03")
+	public String sample03() {
+		d2m.sample03();
+		return "home";
+	}
+	
+	@GetMapping("/sample04")
+	public String sample04() {
+		d2m.sample04();
+		return "home";
+	}
+	
+	@GetMapping("/sample05")
+	public String sample05() {
+		d2m.sample05();
+		return "home";
+	}
+	
+	@GetMapping("/sample06")
+	public String sample06() {
+		d2m.sample06();
+		return "home";
+	}
+	
+	@GetMapping("/sample07")
+	public String sample07() {
+		d2m.sample07();
+		return "home";
+	}
+	
+	@GetMapping("/sample08")
+	public String sample08() {
+		d2m.sample08();
+		return "home";
+	}
+	
+	@GetMapping("/sample09")
+	public String sample09() {
+		d2m.sample09();
+		return "home";
+	}	
 }
