@@ -40,7 +40,7 @@ public class DynamicQueryDAO {
 	
 	
 	// when 사용 예시
-	public void whenEx() {
+	public void whenEx() {			
 		
 		System.out.println("\n --- whenEx --- \n");
 		
@@ -50,6 +50,11 @@ public class DynamicQueryDAO {
 		searchMap.put("searchKeyword", "productNm");
 		searchMap.put("searchWord" , "삼성전자");
 		
+		List<ProductDTO> productList = sqlSession.selectList("dynamicQuery.whenEx", searchMap);
+		for (ProductDTO productDTO : productList) {
+			System.out.println(productDTO);
+		}		
+		
 	}
 	
 	
@@ -58,8 +63,12 @@ public class DynamicQueryDAO {
 		
 		System.out.println("\n --- otherwiseEx --- \n");
 		
-		//int deliveryPrice = 0;
-		int deliveryPrice = 3000;
+		int deliveryPrice = 0;
+		//int deliveryPrice = 3000;	
+		List<ProductDTO> productList = sqlSession.selectList("dynamicQuery.otherwiseEx", deliveryPrice);
+		for (ProductDTO productDTO : productList) {
+			System.out.println(productDTO);
+		}		
 		
 	}
 	
@@ -71,7 +80,7 @@ public class DynamicQueryDAO {
 		
 		List<BrandDTO> brandList = new ArrayList<BrandDTO>();
 		
-		for (int i = 100; i < 105; i++) {
+		for (int i = 200; i < 205; i++) {
 			
 			BrandDTO brandDTO = new BrandDTO();
 			brandDTO.setBrandCd("b" + i);
@@ -81,7 +90,7 @@ public class DynamicQueryDAO {
 			
 			brandList.add(brandDTO);
 		}
-		
+		sqlSession.insert("dynamicQuery.foreachEx01" , brandList);
 		
 	}
 	
@@ -91,8 +100,12 @@ public class DynamicQueryDAO {
 		
 		System.out.println("\n --- foreachEx02 --- \n");
 		
-		String[] brandCdList = {"b1" , "b2" , "b3"};
+		String[] brandCdList = {"b4" , "b5" , "b6"}; // WHERE OR/IN B1~~~~
 		
+		List<BrandDTO> brandList = sqlSession.selectList("dynamicQuery.foreachEx02" , brandCdList);
+		for (BrandDTO brandDTO : brandList) {
+			System.out.println(brandDTO);
+		}		
 	}
 	
 	
@@ -102,7 +115,7 @@ public class DynamicQueryDAO {
 		System.out.println("\n --- foreachEx03 --- \n");
 		
 		String[] brandCdList = {"b100" , "b101" , "b102" , "b103" , "b104" };
-		
+		sqlSession.delete("dynamicQuery.foreachEx03", brandCdList);
 	}
 	
 	
@@ -112,7 +125,7 @@ public class DynamicQueryDAO {
 		System.out.println("\n --- foreachEx04 --- \n");
 		
 		int[] productCdList = {1,2,3,4,5,6};
-		
+		sqlSession.update("dynamicQuery.foreachEx04", productCdList);		
 	}
 	
 	
@@ -128,6 +141,10 @@ public class DynamicQueryDAO {
 		//productDTO.setProductNm("삼성");
 		productDTO.setBrandCd("b1");
 	
+		List<ProductDTO> productList = sqlSession.selectList("dynamicQuery.whereEx", productDTO);
+		for (ProductDTO pDTO : productList) {
+			System.out.println(pDTO);
+		}
 	}
 	
 	
@@ -143,6 +160,7 @@ public class DynamicQueryDAO {
 		productDTO.setPrice(1);
 		productDTO.setDeliveryPrice(1);
 		
+		sqlSession.update("dynamicQuery.setEx", productDTO);
 	}
 	
 	
