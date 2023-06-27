@@ -1,5 +1,7 @@
 package com.spring.mvc.chapter01_form;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,11 +26,14 @@ public class C2V_Ex02 {
 	
 	@GetMapping("/responseBodyEx")
 	@ResponseBody
-	public String responseBodyEx() {
+	public String responseBodyEx(HttpServletRequest request) {
 		//return "<h1>data</h1>";
+		
+				
+		
 		String jsScript = "<script>";
 			   jsScript += "alert('success');";
-			   jsScript += "location.href='requestEx';";
+			   jsScript += "location.href='"+ request.getContextPath() + "/c2v/requestEx';"; 
 			   jsScript += "</script>";
 		
 		return jsScript;
@@ -98,10 +103,12 @@ public class C2V_Ex02 {
 class RestControllerEx {
 	
 	@GetMapping("/restControllerEx")
-	public String restControllerEx() {
+	public String restControllerEx(HttpServletRequest request) {
 	String jsScript = "<script>";
 	   jsScript += "alert('success');";
-	   jsScript += "location.href='requestEx';";
+	   jsScript += "location.href='"+ request.getContextPath() + "/c2v/requestEx';";
+	
+	   
 	   jsScript += "</script>";
 	   
 	   return jsScript;

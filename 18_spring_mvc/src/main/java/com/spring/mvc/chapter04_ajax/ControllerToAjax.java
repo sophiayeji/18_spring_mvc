@@ -124,3 +124,4 @@ public class ControllerToAjax {
 	
 	
 }
+// list<dto> : 변수 list<map> : key

@@ -19,7 +19,7 @@
 				
 				url : "${contextPath}/ajax/c2aEx01",
 				type : "get",
-				success : function() {
+				success : function(data) {
 					/*
 						
 						[형식]
@@ -27,6 +27,10 @@
 						파라메타
 						
 					*/
+					console.log(data)
+					console.log("=======");
+					console.log();
+					
 				}
 			});
 			
@@ -40,7 +44,7 @@
 				
 				url : "${contextPath}/ajax/c2aEx02",
 				type : "get",
-				success : function() {
+				success : function(data) {
 					/*
 					
 						[형식]
@@ -48,6 +52,15 @@
 						파라메타.속성명
 						
 					*/
+					console.log(data.productCd);
+					console.log(data.productNm);
+					console.log(data.price);
+					console.log(data.deliveryPrice);
+					console.log(data.enrollDt);
+					console.log(data.brandCd);
+					console.log("===============");
+					console.log();
+					
 				}
 				
 			});
@@ -62,7 +75,7 @@
 				
 				url : "${contextPath}/ajax/c2aEx03",
 				type : "get",
-				success : function() {
+				success : function(data) {
 					
 					/*
 					
@@ -71,6 +84,12 @@
 						파라메타.키
 						
 					*/
+					console.log(data.orderCd);
+					console.log(data.orderQty);
+					console.log(data.cartCd);
+					console.log(data.cartQty);
+					console.log("=============");
+					console.log();
 					
 				}
 				
@@ -86,7 +105,7 @@
 				
 				url : "${contextPath}/ajax/c2aEx04",
 				type : "get",
-				success : function() {
+				success : function(data) {
 					
 					/*
 					
@@ -97,6 +116,17 @@
 						});
 						
 					*/
+					
+					$(data).each(function(){
+						console.log(this.productCd);
+						console.log(this.productNm);
+						console.log(this.price);
+						console.log(this.deliveryPrice);
+						console.log(this.enrollDt);
+						console.log(this.brandCd);
+						console.log("===============");
+					});
+					
 					
 				}
 				
@@ -112,7 +142,7 @@
 				
 				url : "${contextPath}/ajax/c2aEx05",
 				type : "get",
-				success : function() {
+				success : function(data) {
 					
 					/*
 					
@@ -123,6 +153,15 @@
 						});
 					
 					*/
+					
+					$(data).each(function(){
+						console.log(this.orderCd);
+						console.log(this.orderQty);
+						console.log(this.cartCd);
+						console.log(this.cartQty);
+						console.log("=============");
+						console.log();
+					});
 					
 				}
 				

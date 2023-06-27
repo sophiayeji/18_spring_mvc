@@ -20,6 +20,7 @@ public class V2C_Ex01 {
 		return "chapter01_form/input";
 	}
 	
+	
 	/*
 	 * 
 	 *  1) @ModelAttribute
@@ -33,7 +34,6 @@ public class V2C_Ex01 {
 	 *  - String to Date 데이터 형식의 바인딩은 DTO클래스 property위에 @DateTimeFormat(pattern = "yyyy-MM-dd")을 추가하여 매핑한다.
 	 */
 	
-	
 	@PostMapping("/modelAttribute")
 	//public String modelAttribute(ProductDTO productDTO) {
 	public String modelAttribute(@ModelAttribute ProductDTO productDTO) {
@@ -43,6 +43,7 @@ public class V2C_Ex01 {
 		System.out.println();
 		
 		return "chapter01_form/input";
+		
 	}
 	
 	/* 
@@ -57,15 +58,34 @@ public class V2C_Ex01 {
 	 * - Map으로 전달되는 데이터가 정수,실수,글자등 다양한 데이터일 경우 다형성을 이용하여 Object타입으로 처리할 수 있다.
 	 * 
 	 */
-
+	
 	@PostMapping("/map")
-	public String map(@RequestParam Map <String,Object> productMap) {
+	public String map(@RequestParam Map<String,Object> productMap) {
 		
 		System.out.println("\n @RequestParam Map \n");
 		System.out.println(productMap);
 		System.out.println();
 		
 		return "chapter01_form/input";
+		
 	}
+	
+	
+	@PostMapping("/DTOList")
+	public String DTOList(@ModelAttribute ProductDTO productDTO) {
+		
+		System.out.println("\n DTOList \n");
+		System.out.println(productDTO.getProductList());
+		
+		for (ProductDTO dto : productDTO.getProductList()) {
+			System.out.println(dto);
+		}
+		
+		return "chapter01_form/input";
+		
+	}
+	
+	
+	
 	
 }
